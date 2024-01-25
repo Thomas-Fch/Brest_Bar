@@ -2,7 +2,8 @@
 
 import { MessageForm } from "@/components/MessageForm"
 import { Header } from "@/components/header/Index"
-import { Toaster, toast } from "sonner"
+import { SideMenu } from "@/components/side-menu/Index"
+import { Toaster } from "sonner"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Toaster position="top-center" richColors />
       <Header />
       <MessageForm />
+      <SideMenu />
     </main>
   )
 }

@@ -3,7 +3,7 @@ import React from "react";
 import { z } from "zod";
 import { useOpenModal } from '../store/OpenModalStore';
 import { useToast } from "../store/useToast";
-import { Close } from "./modal/close";
+import { Close } from "./modal/Close";
 import AutoForm, { AutoFormSubmit } from "./ui/auto-form";
 
 const formSchema = z.object({
@@ -19,7 +19,7 @@ export const MessageForm: React.FC = () => {
 
     const { isOpen, toggle } = useOpenModal();
     return (isOpen ?
-        <div className="fixed top-0 flex size-full items-center justify-center bg-black/10" onClick={toggle}>
+        <div className="fixed top-0 z-50 flex size-full items-center justify-center bg-black/10" onClick={toggle}>
             <div className="relative flex flex-col items-center justify-around rounded-3xl bg-[#201F23] py-6 shadow-md shadow-black md:h-fit md:w-1/4 md:rounded-2xl" onClick={(e) => e.stopPropagation()}>
                 <Close />
                 <AutoForm formSchema={formSchema}
