@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { categories } from "../../../utils/categories";
 
-export default function Card() {
+export const Card: React.FC = () => {
     const [active, setActive] = useState(null);
 
     const handleSelected = (index: any) => {
