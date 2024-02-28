@@ -4,9 +4,6 @@ import React from 'react';
 import Note from '../../public/images/Note.svg';
 import { useVisibleStore } from '../../store/useVisibleStore';
 
-export interface IHandleModalClick {
-    onClick: () => void;
-}
 
 export const Button: React.FC = () => {
     const { isModalVisible, setIsModalVisible } = useVisibleStore();

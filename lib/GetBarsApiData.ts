@@ -13,7 +13,7 @@ interface Location {
     6?: string;
   }
 
-export type BarsApiData = {
+export type BarApiData = {
     id: number;
     name: string;
     location: Location;
@@ -31,8 +31,9 @@ export type BarsApiData = {
     type: number[];
   };
   
-  export type AllBarsApiData = { data: BarsApiData[] };
-  export async function GetBarsApiData(
+  export type AllBarsApiData = { data: BarApiData[] };
+  
+  export async function getBarsApiData(
     limit?: number,
     search?: string,
     allData?: boolean

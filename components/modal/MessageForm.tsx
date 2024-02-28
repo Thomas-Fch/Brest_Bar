@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { z } from "zod";
-import { useOpenModal } from '../store/OpenModalStore';
-import { useToast } from "../store/useToast";
-import { Close } from "./modal/Close";
-import AutoForm, { AutoFormSubmit } from "./ui/auto-form";
+import { useToast } from "../../store/useToast";
+import { useVisibleStore } from '../../store/useVisibleStore';
+import AutoForm, { AutoFormSubmit } from "../ui/auto-form";
+import { Close } from "./Close";
 
 const formSchema = z.object({
     subject: z.enum(["Une erreur d'information", "L'ajout d'un nouveau bar", "Une fermeture définitive"]).describe("Vous souhaitez signaler :"),
@@ -17,9 +17,9 @@ const formSchema = z.object({
 
 export const MessageForm: React.FC = () => {
 
-    const { isOpen, toggle } = useOpenModal();
-    return (isOpen ?
-        <div className="fixed top-0 z-50 flex size-full items-center justify-center bg-black/10" onClick={toggle}>
+    const { isModalVisible, setIsModalVisible } = useVisibleStore();
+    return (isModalVisible ?
+        <div className="fixed top-0 z-50 flex size-full items-center justify-center bg-black/10" onClick={() => setIsModalVisible(!isModalVisible)}>
             <div className="relative flex flex-col items-center justify-around rounded-3xl bg-[#201F23] py-6 shadow-md shadow-black md:h-fit md:w-1/4 md:rounded-2xl" onClick={(e) => e.stopPropagation()}>
                 <Close />
                 <AutoForm formSchema={formSchema}

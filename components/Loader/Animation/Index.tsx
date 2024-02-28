@@ -1,13 +1,9 @@
 import React from 'react';
 
-export interface Animation {
-    children: React.ReactNode;
-}
-
-export const Animation: React.FC<Animation> = ({ children }) => {
+export const Animation: React.FC = ({ }) => {
     return (
-        <div className='flex size-16 animate-ping items-center justify-center rounded-full bg-violet-500 text-sm font-light'>
-            {children}
-        </div>
+        <>
+            <div role="status" className='size-14 animate-spin rounded-full border-8 border-gray-300 border-t-[#9747FF]' />
+        </>
     );
 };

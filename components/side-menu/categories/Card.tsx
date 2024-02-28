@@ -3,16 +3,13 @@ import useSearchAndFilter from '@/store/useSearchAndFilter';
 import Image from 'next/image';
 import { categories } from "../../../utils/categories";
 
-interface CardProps {
-    onClick: () => void;
-}
 
-export const Card: React.FC<CardProps> = ({ onClick }) => {
+
+export const Card: React.FC = () => {
 
     const { active, handleCardClick } = useSearchAndFilter();
-
     return (
-        <div className='mt-4 flex justify-evenly' onClick={onClick}>
+        <div className='mt-4 flex justify-evenly' >
             {categories.map((item) => {
                 const { name, img, alt } = item;
                 return (

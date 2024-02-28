@@ -1,7 +1,7 @@
+import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import clsx from 'clsx'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className='h-full'>
-      <link rel="icon" href="/favicon.ico" />
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={clsx(inter.className, "h-full")}>{children}</body>
     </html>
   )

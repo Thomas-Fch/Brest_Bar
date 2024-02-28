@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import Cross from "../../public/images/Cross.svg";
-import { useOpenModal } from '../../store/OpenModalStore';
+import { useVisibleStore } from '../../store/useVisibleStore';
 
 export const Close: React.FC = () => {
-    const toggle = useOpenModal((e) => e.toggle);
+    const { isModalVisible, setIsModalVisible } = useVisibleStore();
     return (
         <button className='absolute right-4 top-4 '
-            onClick={toggle}>
+            onClick={() => setIsModalVisible(!isModalVisible)}>
 
             <Image
                 alt="Croix"

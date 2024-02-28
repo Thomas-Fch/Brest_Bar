@@ -6,7 +6,7 @@ import { useMapZoomStore } from './useMapZoom';
 
 const useSearchAndFilter = () => {
 
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>();
   const { search, setSearch } = useDataFilterStore();
   const { setZoom } = useMapZoomStore();
 
